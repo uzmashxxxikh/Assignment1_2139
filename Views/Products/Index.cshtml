@@ -1,19 +1,9 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
-
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
-
-
-@using SmartInventory
+﻿
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 
-<h2>Product Inventory</h2>
-<table class="table">
+<h2>Product List</h2>
+<table>
     <thead>
     <tr>
         <th>Name</th>
@@ -28,7 +18,7 @@
     {
         <tr>
             <td>@product.Name</td>
-            <td>@product.Category?.Name</td>
+            <td>@product.Category.Name</td>
             <td>@product.Price</td>
             <td>@product.Quantity</td>
             <td>@(product.Quantity < product.LowStockThreshold ? "⚠️ Low Stock" : "In Stock")</td>
@@ -36,4 +26,4 @@
     }
     </tbody>
 </table>
-<a class="btn btn-primary" href="/Products/Create">Add Product</a>
+<a href="/Products/Create">Add Product</a>

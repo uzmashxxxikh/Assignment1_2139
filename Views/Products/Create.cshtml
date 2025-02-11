@@ -1,0 +1,17 @@
+﻿@model Assignment1_COMP2139.Models.Product
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<h2>Add New Product</h2>
+<form method="post">
+    <label>Name</label>
+    <input type="text" asp-for="Name" required />
+    
+    <label>Price</label>
+    <input type="number" asp-for="Price" required />
+    
+    <label>Quantity</label>
+    <input type="number" asp-for="Quantity" required />
+    
+    <button type="submit">Save</button>
+</form>
